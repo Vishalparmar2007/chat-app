@@ -16,9 +16,14 @@
         <h1>Nook</h1>
       </div>
 
-      <div class="room-item">
-        <span class="dot"></span>
-        # general
+      <form class="new-chat-form" id="new-chat-form">
+        <input type="text" id="new-chat-input" placeholder="Message a username...">
+        <button type="submit">Start</button>
+      </form>
+      <div class="new-chat-error" id="new-chat-error"></div>
+
+      <div class="conversation-list" id="conversation-list">
+        <div class="empty-state small">No conversations yet</div>
       </div>
 
       <div class="sidebar-footer">
@@ -31,17 +36,15 @@
     </aside>
 
     <main class="chat-main">
-      <div class="chat-header"># general</div>
+      <div class="chat-header" id="chat-header-title">Select a conversation</div>
 
       <div class="message-list" id="message-list">
-        <div class="empty-state">Loading messages...</div>
+        <div class="empty-state">Pick someone from the left, or start a new conversation above.</div>
       </div>
 
-      <div class="upload-preview" id="upload-preview"></div>
-
       <form class="composer" id="composer-form">
-        <textarea id="text-input" rows="1" placeholder="Message #general"></textarea>
-        <button type="submit" class="send-btn" id="send-btn" title="Send">➤</button>
+        <textarea id="text-input" rows="1" placeholder="Type a message..." disabled></textarea>
+        <button type="submit" class="send-btn" id="send-btn" title="Send" disabled>➤</button>
       </form>
     </main>
   </div>
