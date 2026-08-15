@@ -3,45 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nook — Log in</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Nook — Chat</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="auth-screen">
-    <div class="auth-card">
-      <div class="auth-brand">
+  <div class="chat-screen">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
         <div class="waveform">
           <span></span><span></span><span></span><span></span><span></span><span></span>
         </div>
         <h1>Nook</h1>
       </div>
 
-      <h2>Welcome back</h2>
-      <p class="subtitle">Log in to keep the conversation going.</p>
+      <div class="room-item">
+        <span class="dot"></span>
+        # general
+      </div>
 
-      <div id="form-error" class="form-error"></div>
+      <div class="sidebar-footer">
+        <div class="avatar" id="current-avatar">?</div>
+        <div class="who">
+          <div class="username" id="current-username">Loading...</div>
+          <button class="logout" id="logout-btn">Log out</button>
+        </div>
+      </div>
+    </aside>
 
-      <form id="login-form" novalidate>
-        <div class="field">
-          <label for="email">Email</label>
-          <input type="email" id="email" required autocomplete="email">
-        </div>
-        <div class="field">
-          <label for="password">Password</label>
-          <input type="password" id="password" required autocomplete="current-password">
-        </div>
-        <button type="submit" id="submit-btn" class="btn-primary">Log in</button>
+    <main class="chat-main">
+      <div class="chat-header"># general</div>
+
+      <div class="message-list" id="message-list">
+        <div class="empty-state">Loading messages...</div>
+      </div>
+
+      <div class="upload-preview" id="upload-preview"></div>
+
+      <form class="composer" id="composer-form">
+        <textarea id="text-input" rows="1" placeholder="Message #general"></textarea>
+        <button type="submit" class="send-btn" id="send-btn" title="Send">➤</button>
       </form>
-
-      <p class="auth-switch">New here? <a href="register.html">Create an account</a></p>
-    </div>
+    </main>
   </div>
 
   <!-- Firebase SDKs -->
   <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
-  <script src="js/firebase-config.js"></script>
-  <script src="js/login.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="chat.js"></script>
 </body>
 </html>
