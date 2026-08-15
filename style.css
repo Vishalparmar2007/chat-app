@@ -266,6 +266,93 @@ input, button, textarea {
   background: var(--accent-2);
 }
 
+/* New chat search */
+.new-chat-form {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.new-chat-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 9px 11px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  outline: none;
+  font-size: 13px;
+}
+
+.new-chat-form input:focus { border-color: var(--accent); }
+
+.new-chat-form button {
+  padding: 0 14px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: #16130a;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.new-chat-error {
+  color: var(--danger);
+  font-size: 12px;
+  min-height: 14px;
+  margin-bottom: 10px;
+}
+
+/* Conversation list */
+.conversation-list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.conversation-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 8px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.conversation-item:hover { background: var(--surface-2); }
+
+.conversation-item.active {
+  background: var(--surface-2);
+  box-shadow: inset 2px 0 0 var(--accent);
+}
+
+.conversation-info { min-width: 0; }
+
+.conversation-name {
+  font-weight: 600;
+  font-size: 13.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.conversation-preview {
+  font-size: 12px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 170px;
+}
+
+.empty-state.small {
+  margin: 12px auto;
+  font-size: 13px;
+}
+
 .sidebar-footer {
   margin-top: auto;
   padding-top: 16px;
@@ -339,6 +426,29 @@ input, button, textarea {
   max-width: 640px;
 }
 
+.message-row.own {
+  flex-direction: row-reverse;
+  align-self: flex-end;
+}
+
+.message-row.own .message-meta {
+  flex-direction: row-reverse;
+}
+
+.message-row.own .message-text {
+  background: var(--accent-dim);
+}
+
+.message-text {
+  font-size: 14.5px;
+  line-height: 1.5;
+  word-break: break-word;
+  background: var(--surface-2);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+}
+
 .message-row .avatar { margin-top: 2px; }
 
 .message-body { min-width: 0; }
@@ -358,12 +468,6 @@ input, button, textarea {
 .message-meta .time {
   font-size: 11.5px;
   color: var(--text-muted);
-}
-
-.message-text {
-  font-size: 14.5px;
-  line-height: 1.5;
-  word-break: break-word;
 }
 
 .message-media img,
