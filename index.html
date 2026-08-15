@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nook — Log in</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="auth-screen">
+    <div class="auth-card">
+      <div class="auth-brand">
+        <div class="waveform">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <h1>Nook</h1>
+      </div>
+
+      <h2>Welcome back</h2>
+      <p class="subtitle">Log in to keep the conversation going.</p>
+
+      <div id="form-error" class="form-error"></div>
+
+      <form id="login-form" novalidate>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" required autocomplete="current-password">
+        </div>
+        <button type="submit" id="submit-btn" class="btn-primary">Log in</button>
+      </form>
+
+      <p class="auth-switch">New here? <a href="register.html">Create an account</a></p>
+    </div>
+  </div>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

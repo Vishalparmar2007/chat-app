@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nook — Chat</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="chat-screen">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="waveform">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <h1>Nook</h1>
+      </div>
+
+      <div class="room-item">
+        <span class="dot"></span>
+        # general
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="avatar" id="current-avatar">?</div>
+        <div class="who">
+          <div class="username" id="current-username">Loading...</div>
+          <button class="logout" id="logout-btn">Log out</button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="chat-main">
+      <div class="chat-header"># general</div>
+
+      <div class="message-list" id="message-list">
+        <div class="empty-state">Loading messages...</div>
+      </div>
+
+      <div class="upload-preview" id="upload-preview"></div>
+
+      <form class="composer" id="composer-form">
+        <textarea id="text-input" rows="1" placeholder="Message #general"></textarea>
+        <button type="submit" class="send-btn" id="send-btn" title="Send">➤</button>
+      </form>
+    </main>
+  </div>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/chat.js"></script>
+</body>
+</html>
